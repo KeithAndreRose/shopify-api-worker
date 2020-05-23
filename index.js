@@ -1,12 +1,17 @@
 const Router = require('./router')
 import handleOptions from './lib/handleOptions'
-
-const myHeaders = {
+import corsHeaders from './lib/utils/corsHeaders'
+const myHeaders = new Headers({
     "content-type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type"
-}
+    ...corsHeaders
+})
+
+// const myHeaders = {
+//     "content-type": "application/json",
+//     "Access-Control-Allow-Origin": "*",
+//     "Access-Control-Allow-Methods": "GET, HEAD, POST, OPTIONS",
+//     "Access-Control-Allow-Headers": "Content-Type"
+// }
 
 /**
  * Example of how router can be used in an application
